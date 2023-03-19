@@ -24,6 +24,7 @@ func main() {
 
 func fetch(url string, ch chan<- string) {
 	start := time.Now()
+
 	resp, err := http.Get(url)
 	if err != nil {
 		ch <- fmt.Sprint(err) // send to channel ch
